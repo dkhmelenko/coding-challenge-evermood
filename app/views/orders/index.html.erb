@@ -1,0 +1,33 @@
+<h1>Orders</h1>
+<hr>
+<table>
+<% @orders.each do |order| %>
+
+<tr valign="top">
+    <td>
+    ID: <%= order.id %><br>
+    Created: <%= order.created_at.strftime('%B %e, %Y %H:%M') %><br>
+    Promotion codes: <%= order.promotion_codes %><br>
+    Discount codes: <%= order.discount_code %><br>
+        Total price: <%= order.total_price %>€<br>
+    <%= button_to "Complete", order_path(order.id), :method => :patch, data: { turbo: false } %>
+    </td>
+
+    <td>
+    Items: <% order.items.each do |item| %><br>
+        • <%= item.name%>(<%= item.size %>)
+        <% if !item.add.empty? %>
+            <br> ◦ Add: <%= item.add.join(', ').html_safe %>
+        <% end %>
+        <% if !item.remove.empty? %>
+            <br>◦ Remove: <%= item.remove.join(', ').html_safe %>
+        <% end %>
+
+    <% end %><br><br>
+
+    </td>
+</tr>
+
+
+<% end %>
+</table>
