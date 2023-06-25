@@ -1,24 +1,11 @@
-# README
+# Solution for Evermood coding challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository implements the [Pizza challenge](https://github.com/evermood/rails-pizza-challenge) from Evermood in Ruby on Rails.
 
-Things you may want to cover:
+It contains the following endpoints:
+- GET /orders
+- PATCH /orders/:id
 
-* Ruby version
+This solution contains the basic tests. The tests can be run by the command `rspec`.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To run the application use the command `rails s`.
